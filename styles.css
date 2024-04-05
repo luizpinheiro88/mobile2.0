@@ -1,0 +1,72 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: rgba(242,242,242, 0.5);
+    color: #333; 
+
+}
+
+
+.pagina-boas-vindas {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+}
+
+.pagina-boas-vindas header {        
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    transform:translateY(-10px);
+}
+
+.pagina-boas-vindas form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px; 
+}
+
+.pagina-boas-vindas form label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.pagina-boas-vindas form input[type="text"],
+.pagina-boas-vindas form input[type="email"],
+.pagina-boas-vindas form input[type="tel"],
+.pagina-boas-vindas form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.pagina-boas-vindas form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff; 
+    color: #fff; 
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.pagina-boas-vindas form button:hover {
+    background-color: #0056b3; 
+}
+
+

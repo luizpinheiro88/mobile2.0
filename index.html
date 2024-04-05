@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Dedo duro - Seu Aplicativo de Denúncia de Infrações de Trânsito</title>
+    <link rel="stylesheet" href="styles.css">
+   
+    <link rel="manifest" href="manifest.json">
+
+    <link rel="apple-touch-icon" href="assents/img/AppImages/114.png">
+
+    <meta name="theme-color" content="#007bff">
+    
+</head>
+<body>
+   
+    <section class="pagina-boas-vindas">
+        <header>
+            <h1>DEDO DURO</h1>
+            <p>Esse aplicativo tem a intenção de reportar</p> 
+            <p>infrações diretamente para central de fiscalizção.</p>
+        </header>
+        <form id="form-cadastro">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="telefone">Telefone:</label>
+            <input type="tel" id="telefone" name="telefone" required>
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha" required>
+            <a href="denuncia.html">
+                <button id="btn-entrar">Entrar</button>
+            </a>
+        </form>
+    </section>
+
+   
+    <section class="denuncia">
+        
+    </section>
+
+    
+    <section class="pagina-visualizacao-denuncias">
+        
+    </section>
+     <script>
+        document.getElementById("btn-entrar").addEventListener("click", function() {
+            window.location.href = "denuncia.html";
+        });
+    </script>
+
+<script>
+    let newWorker;
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js').then(reg => {
+        reg.addEventListener('updatefound', () => {
+          newWorker = reg.installing;
+        });
+      });
+      let refreshing;
+      navigator.serviceWorker.addEventListener('controllerchange', function () {
+        if (refreshing) return;
+        window.location.reload();
+        refreshing = true;
+      });
+    }
+  </script>
+
+</body>
+</html>

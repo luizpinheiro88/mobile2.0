@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dedo duro - Seu Aplicativo de Denúncia de Infrações de Trânsito</title>
+    <link rel="stylesheet" href="style_denuncia.css">
+</head>
+<body>
+    <header>
+        <h1>Informar Denúncia</h1>
+    </header>
+    <section class="formulario-denuncia">
+        <form id="form-denuncia">
+            <label for="tipo-infracao">Tipo de Infração:</label>
+            <select id="tipo-infracao" name="tipo-infracao" required>
+                <option value="">Selecione o tipo de infração</option>
+                <option value="Estacionamento Irregular">Estacionamento Irregular</option>
+                <option value="Acidente">Acidente</option>
+                <option value="Animais na pista">Animais na pista</option>
+                
+            </select>
+            <label for="detalhes">Detalhes:</label>
+            <textarea id="detalhes" name="detalhes" rows="4" required></textarea>
+            <button type="button" id="btn-camera">Abrir Câmera</button>
+            <button type="button" id="btn-localizacao">Obter Localização</button>
+            <button type="submit">Enviar Denúncia</button>
+        </form>
+        <div class="botoes">
+            <button id="btn-voltar">Voltar para o Início</button>
+            <button id="btn-visualizacao">Visualização de Denúncias</button>
+        </div>
+    </section>
+    
+    <script src="script.js"></script>
+</body>
+</html>
