@@ -9,10 +9,16 @@ document.getElementById("btn-visualizacao").addEventListener("click", function()
 });
 
 // Selecionando o botão "Abrir Câmera"
-const btnAbrirCamera = document.getElementById("btn-camera");
+const btnAbrirCamera = document.getElementById("btn-abrir-camera");
 
-// Selecionando o botão "Tirar Foto"
+// Selecionando o botão "Tirar Foto" dentro do modal
 const btnTirarFoto = document.getElementById("btn-tirar-foto");
+
+// Selecionando o modal
+const modal = document.getElementById("modal-camera");
+
+// Selecionando o elemento de vídeo para visualização da câmera
+const cameraPreview = document.getElementById("camera-preview");
 
 // Variável para armazenar a stream da câmera
 let cameraStream;
@@ -31,22 +37,11 @@ btnAbrirCamera.addEventListener("click", function() {
             // Armazene a stream da câmera na variável cameraStream
             cameraStream = stream;
 
-            // Obtenha o track de vídeo do stream
-            const videoTrack = stream.getVideoTracks()[0];
-
-            // Crie um ImageCapture object usando o track de vídeo
-            const imageCapturer = new ImageCapture(videoTrack);
+            // Exiba o modal
+            modal.style.display = "block";
 
             // Exiba o elemento de vídeo para visualização da câmera
-            const cameraPreview = document.getElementById("camera-preview");
-            cameraPreview.style.display = "block";
             cameraPreview.srcObject = stream;
-
-            // Exiba o botão "Tirar Foto"
-            btnTirarFoto.style.display = "inline";
-
-            // Oculte o botão "Abrir Câmera"
-            btnAbrirCamera.style.display = "none";
 
             console.log("Câmera aberta com sucesso!");
         })
@@ -55,7 +50,7 @@ btnAbrirCamera.addEventListener("click", function() {
         });
 });
 
-// Evento de clique para o botão "Tirar Foto"
+// Evento de clique para o botão "Tirar Foto" dentro do modal
 btnTirarFoto.addEventListener("click", function() {
     // Verifique se a stream da câmera está definida
     if (!cameraStream) {
@@ -72,10 +67,21 @@ btnTirarFoto.addEventListener("click", function() {
             // Converta a foto em uma URL de objeto
             const imageUrl = URL.createObjectURL(blob);
 
-            // Exiba a foto em uma nova janela ou janela modal
-            window.open(imageUrl); // Abre em uma nova janela
+            // Crie um elemento de imagem para exibir a foto
+            const imgElement = document.createElement('img');
+            imgElement.src = imageUrl;
+
+            // Adicione a imagem ao corpo do documento
+            document.body.appendChild(imgElement);
         })
         .catch(function(error) {
             console.error('Error taking photo:', error);
         });
+});
+
+// Feche o modal ao clicar fora dele
+window.addEventListener("click", function(event) {
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
 });

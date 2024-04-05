@@ -21,15 +21,19 @@
             </select>
             <label for="detalhes">Detalhes:</label>
             <textarea id="detalhes" name="detalhes" rows="4" required></textarea>
-            <button type="button" id="btn-camera">Abrir Câmera</button>
-            <button type="button" id="btn-tirar-foto" style="display: none;">Tirar Foto</button>
+            <button type="button" id="btn-abrir-camera">Abrir Câmera</button>
             <button type="submit">Enviar Denúncia</button>
         </form>
+        <div id="modal-camera" class="modal">
+            <div class="modal-content">
+                <video id="camera-preview" autoplay style="height: 300px; width: 400px;"></video>
+                <button type="button" id="btn-tirar-foto">Tirar Foto</button>
+            </div>
+        </div>
         <div class="botoes">
             <button id="btn-voltar">Voltar para o Início</button>
             <button id="btn-visualizacao">Visualização de Denúncias</button>
         </div>
-        <video id="camera-preview" style="display: none;"></video> <!-- Elemento de vídeo para visualização da câmera -->
     </section>
     
     <script src="script.js"></script>
