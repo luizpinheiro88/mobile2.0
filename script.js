@@ -37,6 +37,11 @@ btnAbrirCamera.addEventListener("click", function() {
             // Crie um ImageCapture object usando o track de vídeo
             const imageCapturer = new ImageCapture(videoTrack);
 
+            // Exiba o elemento de vídeo para visualização da câmera
+            const cameraPreview = document.getElementById("camera-preview");
+            cameraPreview.style.display = "block";
+            cameraPreview.srcObject = stream;
+
             // Exiba o botão "Tirar Foto"
             btnTirarFoto.style.display = "inline";
 
