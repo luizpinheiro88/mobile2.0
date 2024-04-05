@@ -1,14 +1,17 @@
+/* Estilos para o corpo da página */
 body {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     background-color: #f2f2f2;
     color: #333;
 }
 
+/* Estilos para o cabeçalho */
 header {
     text-align: center;
     padding: 20px 0;
 }
 
+/* Estilos para o formulário de denúncia */
 .formulario-denuncia {
     max-width: 600px;
     margin: 0 auto;
@@ -49,14 +52,31 @@ header {
     background-color: #0056b3;
 }
 
-/* Estilos para os botões adicionais */
-#btn-camera,
+/* Estilos para o modal da câmera */
+#modal-camera {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#camera-preview {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
 #btn-tirar-foto {
     display: block;
     width: 100%;
     padding: 10px;
     margin-top: 10px;
-    background-color: #28a745; /* cor verde */
+    background-color: #007bff;
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -64,8 +84,21 @@ header {
     transition: background-color 0.3s ease;
 }
 
-/* Estilo de hover para os botões adicionais */
-#btn-camera:hover,
 #btn-tirar-foto:hover {
-    background-color: #218838; /* cor verde mais escura ao passar o mouse */
+    background-color: #0056b3;
+}
+
+/* Estilos para a mensagem "Foto arquivada" */
+.mensagem-arquivada {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
