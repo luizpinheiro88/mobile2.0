@@ -21,6 +21,11 @@
             </select>
             <label for="detalhes">Detalhes:</label>
             <textarea id="detalhes" name="detalhes" rows="4" required></textarea>
+            <!-- Adicione o campo de entrada e botão para consulta de CEP -->
+            <label for="cep">CEP:</label>
+            <input type="text" id="input-cep-denuncia" placeholder="Digite o CEP">
+            <button type="button" id="btn-consultar-cep-denuncia">Consultar CEP</button>
+            <!-- Fim da adição -->
             <button type="button" id="btn-abrir-camera">Abrir Câmera</button>
             <button type="submit">Enviar Denúncia</button>
         </form>
@@ -36,6 +41,10 @@
         </div>
     </section>
     
+    <!-- Importe o arquivo JavaScript no final do corpo -->
+    <script src="script_denuncia.js"></script>
+    <!-- Fim da importação -->
+
     <script src="script.js"></script>
 </body>
 </html>

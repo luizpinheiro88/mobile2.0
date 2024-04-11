@@ -86,3 +86,25 @@ btnTirarFoto.addEventListener("click", function() {
             console.error('Error taking photo:', error);
         });
 });
+
+// Função para consultar o CEP na página de denúncia
+async function consultarCEPDenuncia() {
+    const inputCEP = document.getElementById("input-cep-denuncia").value;
+
+    try {
+        const data = await consultarCEP(inputCEP);
+        // Exibir o endereço buscado pelo site
+        const endereco = document.getElementById("endereco-buscado");
+        endereco.textContent = `Endereço buscado: ${data.logradouro}, ${data.bairro}, ${data.localidade} - ${data.uf}`;
+        // Aqui você pode manipular os dados do CEP, como preencher campos de endereço na página de denúncia
+        console.log(data);
+    } catch (error) {
+        // Trate o erro, como exibir uma mensagem para o usuário
+        console.error(error.message);
+    }
+}
+
+// Evento de clique para o botão "Consultar CEP" na página de denúncia
+const btnConsultarCEPDenuncia = document.getElementById("btn-consultar-cep-denuncia");
+
+btnConsultarCEPDenuncia.addEventListener("click", consultarCEPDenuncia);
