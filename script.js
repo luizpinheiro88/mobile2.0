@@ -1,3 +1,19 @@
+// Selecionando o botão "Voltar ao Início"
+const btnVoltarInicio = document.getElementById("btn-voltar");
+
+// Selecionando o botão "Visualizar Denúncia"
+const btnVisualizarDenuncia = document.getElementById("btn-visualizacao");
+
+// Evento de clique para o botão "Voltar ao Início"
+btnVoltarInicio.addEventListener("click", function() {
+    window.location.href = "index.html"; // Redireciona para a página inicial (index.html)
+});
+
+// Evento de clique para o botão "Visualizar Denúncia"
+btnVisualizarDenuncia.addEventListener("click", function() {
+    window.location.href = "visualizacao.html"; // Redireciona para a página de visualização de denúncias
+});
+
 // Selecionando o botão "Abrir Câmera"
 const btnAbrirCamera = document.getElementById("btn-abrir-camera");
 
